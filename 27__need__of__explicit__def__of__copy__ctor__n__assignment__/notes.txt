@@ -1,0 +1,8 @@
+Changes via a can be observed via b.
+
+Once b is destroyed, a.name is a dangling pointer.
+
+If a is destroyed, deleting the dangling pointer yields undefined behavior.
+
+Since the assignment does not take into account what name pointed to before the assignment, 
+sooner or later you will get memory leaks all over the place.
